@@ -15,9 +15,9 @@ function moveMole(){
 
     currentSquare.appendChild(mole);
 
-    currentSquare.addEventListener("click", function(){
+    currentSquare.onclick = function(){
         score++;
-    })
+    }
 
 }
 
@@ -31,9 +31,11 @@ function countDown(){
     if(time === 0){
         clearInterval(gameDuration)
         alert(`GAME OVER! your score is ${score}`)
+        time = 60;
+        score = 0;
     }
 }
 
 start.addEventListener("click", () => {
-    gameDuration = setInterval(countDown, 1000)
+    gameDuration = setInterval(countDown, 500)
 })
