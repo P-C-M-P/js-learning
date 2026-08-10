@@ -17,26 +17,26 @@ function moveMole(){
 
     currentSquare.appendChild(mole);
 
- /*   squares.forEach(function(square){
-        square.addEventListener("click",function(){
+    squares.forEach(function(square){
+        square.onclick = function(){
             if(square === currentSquare){
                 score++;
             }   
-        });
+        };
     });
- */
-
+ 
+/*
     if(previousSquare){
         previousSquare.onclick = null;
     }
 
-    currentSquare.onclick = function(){
-        if(currentSquare.contains(mole)){
-            score++
+    if(currentSquare.contains(mole)){
+        currentSquare.onclick = function(){
+            score++;
         }
-    }
+    }*/
 
-    previousSquare = currentSquare;
+   // previousSquare = currentSquare;
 }
 
 function countDown(){
