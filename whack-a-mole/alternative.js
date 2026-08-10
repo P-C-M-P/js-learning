@@ -1,4 +1,5 @@
-const start = document.getElementById("start")
+const start = document.getElementById("start");
+let squares = document.querySelectorAll(".square")
 
 let mole = document.createElement("img"); 
 mole.src="images/mole.png"
@@ -8,6 +9,7 @@ let currentResult = document.getElementById("score")
 let currentTime = document.getElementById("time-left");
 let time = 60
 let gameDuration;
+let previousSquare = null;
 
 function moveMole(){
     let randomPosition = Math.floor(Math.random() * 9) + 1
@@ -15,10 +17,26 @@ function moveMole(){
 
     currentSquare.appendChild(mole);
 
-    currentSquare.onclick = function(){
-        score++;
+ /*   squares.forEach(function(square){
+        square.addEventListener("click",function(){
+            if(square === currentSquare){
+                score++;
+            }   
+        });
+    });
+ */
+
+    if(previousSquare){
+        previousSquare.onclick = null;
     }
 
+    currentSquare.onclick = function(){
+        if(currentSquare.contains(mole)){
+            score++
+        }
+    }
+
+    previousSquare = currentSquare;
 }
 
 function countDown(){
@@ -37,5 +55,5 @@ function countDown(){
 }
 
 start.addEventListener("click", () => {
-    gameDuration = setInterval(countDown, 500)
+    gameDuration = setInterval(countDown, 1000)
 })
