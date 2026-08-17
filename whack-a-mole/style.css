@@ -4,6 +4,7 @@
     border-radius: 50%;
     border: 2px solid black; 
     background-color: green;
+    box-shadow: inset 4px 8px;
 }
 
 .grid{
@@ -15,11 +16,17 @@
     height: 630px;
     background-color: darkgreen;
     border-radius: 12px;
+    box-shadow: inset 4px 4px ;
 }
 
 button{
     padding: 4px 12px;
-    border-radius: 2px;
+    margin: 24px;
+    border-radius: 8px;
+    background: #f5a623;    
+    font-weight: bold;
+    color: white;
+    font-size: 1em;
 }
 
 .square img{
@@ -30,5 +37,26 @@ button{
 }
 
 body{
-    background-color: navy;
+    background-image: url(images/back.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#controls{
+    border-radius: 12px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+#game{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#topBar{
+    display: none;
+    justify-content: space-between;
 }
