@@ -5,6 +5,8 @@ const Pause = document.querySelector("#pause")
 const Resume = document.querySelector("#resume")
 const Restart = document.querySelector("#reStart")
 const topBar = document.getElementById("topBar")
+const GameOver = document.getElementById("gameover")
+const game = document.getElementById("game")
 
 
 let mole = document.createElement("img"); 
@@ -53,8 +55,11 @@ function countDown(){
         
 
     if(time === -1){
-        alert(`GAME OVER! your score is ${score}`)
+        //alert(`GAME OVER! your score is ${score}`)
         clearInterval(gameDuration)
+        GameOver.style.display = "none"
+        GameOver.innerHTML = "Game Over!<br>your score is: " + score
+
         // time = 60;
         // score = 0;
     }
