@@ -5,7 +5,6 @@ const Pause = document.querySelector("#pause")
 const Resume = document.querySelector("#resume")
 const Restart = document.querySelector("#reStart")
 const topBar = document.getElementById("topBar")
-const GameOver = document.getElementById("gameover")
 const game = document.getElementById("game")
 
 
@@ -57,11 +56,7 @@ function countDown(){
     if(time === -1){
         //alert(`GAME OVER! your score is ${score}`)
         clearInterval(gameDuration)
-        GameOver.style.display = "none"
-        GameOver.innerHTML = "Game Over!<br>your score is: " + score
-
-        // time = 60;
-        // score = 0;
+        GameOver.innerHTML = "Game Over!<br>Your score is: " + score
     }
     else{
         moveMole();
@@ -97,5 +92,6 @@ Restart.addEventListener("click", () => {
     score = 0;
     currentTime.textContent = time;
     currentResult.textContent = score;
+
     gameDuration = setInterval(countDown, 1000)
 })

@@ -2,13 +2,13 @@ button{
     font-size: 3em;
     font-weight: bold;
     color: white;
-    background: #1fff1f;
+    background: #023606;
     padding: 24px; 
     border-radius: 12px;
 }
 
 body{
-    background-image: url(images/bgc.png);
+    background-image: url(images/background.jpg);
     background-size: cover;
     background-repeat: no-repeat;
 

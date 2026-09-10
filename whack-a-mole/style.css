@@ -60,3 +60,9 @@ body{
     display: none;
     justify-content: space-between;
 }
+
+#gameover {
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
